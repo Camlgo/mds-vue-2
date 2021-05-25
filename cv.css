@@ -1,0 +1,213 @@
+@font-face {
+  font-family: "SignPainter";
+  src: url('SignPainterHouseScriptRegular.ttf');
+}
+
+@font-face {
+  font-family: "nunito";
+  src: url("Nunito-Regular.ttf");
+}
+
+@font-face {
+font-family:"piepie";
+src: url("Strenuous3D.ttf");
+}
+
+body {
+    background-color: #FFF1E6;
+}
+
+#wrap {
+  width: 90%;
+  margin: 0 auto;
+  background-color: #FFF;
+}
+
+h1 {
+  font-family: "SignPainter";
+  font-size: 90px;
+  color : #174949;
+}
+
+h2 {
+  font-family: "piepie", sans-serif;
+  font-size: 45px;
+  color: #174949;
+}
+
+h3 {
+  font-family: "piepie", sans-serif;
+  font-size: 30px;
+}
+
+p {
+  font-family: "nunito";
+  font-style:normal;
+  font-size: 20px;
+}
+
+ul {
+    font-family: "nunito";
+    font-style:normal;
+    font-size: 20px;
+}
+
+li {
+  display : list-item;
+  list-style-image : url(puce.svg);
+}
+
+a {
+    font-family: "nunito";
+    font-style:normal;
+    font-size: 20px;
+    color: white;
+    text-decoration: none;
+}
+
+#header {
+  display: flex;
+  justify-content: center;
+  padding: 30px;
+  align-items:center;
+}
+
+
+    .job, .img, .hello {
+      width: 33.33%;
+      flex-wrap: wrap;
+      text-align: center;
+      justify-content: center;
+    }
+
+        .web {
+          margin-bottom: -60px;
+        }
+
+        .name {
+          font-family: "SignPainter";
+          font-size: 40px;
+        }
+
+
+        .lieu {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+
+            .location {
+              width: 20px;
+              height: auto;
+              margin-right: 15px;
+              margin-top: -55px;
+            }
+
+            .lemans {
+              margin-top: -55px;
+            }
+
+
+    .autoportrait {
+      width: 320px;
+      height: auto;
+      padding: 5px;
+    }
+
+
+    .hello {
+      text-align: justify;
+    }
+        .bonjour {
+          text-align: center;
+        }
+
+        .book {
+          background-image: url("./forme.svg");
+          background-repeat: no-repeat;
+          height: 100px;
+          text-align: center;
+          margin-left: 30px;
+          padding-top: 25px;
+        }
+
+        .book a {
+          font-family: "piepie", sans-serif;
+          font-size: 30px;
+        }
+
+
+#rectangle {
+  background-color: #174949;
+  height: 80px;
+  color: #ffffff;
+  display: flex;
+  align-items:center;
+  padding-left: 20px;
+  padding-right: 20px;
+
+}
+
+    .mail, .tel, .age, .linkedin {
+      width: 25%;
+    }
+
+    .mail a, .tel a, .age, .linkedin a {
+      text-align: center;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+        .mail img {
+          display: inline-block;
+          vertical-align: middle;
+        }
+
+        .mail p {
+          display: inline-block;
+        }
+
+        .icone {
+          width: 55px;
+          margin-right: 18px;
+          transition: all .2s ease-in-out;
+        }
+
+            .icone:hover {
+                    transform: scale(1.3);
+            }
+
+#bottom {
+  display: flex;
+  justify-content: center;
+}
+
+    #gauche {
+      width: 45%;
+      display: inline-block;
+      padding: 2%;
+    }
+        .about {
+            text-align: justify;
+        }
+
+            .logo img {
+              width: 65%;
+            }
+
+
+    #droite {
+      width: 45%;
+      display: inline-block;
+      padding: 2%;
+    }
+
+        .bigger {
+          font-weight: bold;
+          color: #CE634E;
+        }
+
+        .langue {
+          list-style-type: none;
+        }
