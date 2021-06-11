@@ -54,7 +54,7 @@ ul {
 
 li {
   display : list-item;
-  list-style-image : url(puce.svg);
+  list-style-image : url("img/puce.svg");
 }
 
 a {
@@ -64,6 +64,46 @@ a {
     color: white;
     text-decoration: none;
 }
+.active{
+  background-color: #b7b7b7;
+}
+
+/*Barre de recherche*/
+.search {
+  width: 100%;
+  position: relative;
+  display: flex;
+}
+
+.searchTerm {
+  width: 100%;
+  border: 3px solid #174949;
+  border-right: none;
+  padding: 5px;
+  height: 20px;
+  border-radius: 5px 0 0 5px;
+  outline: none;
+  color: #174949;
+}
+
+.searchTerm:focus{
+  color: #CE634E;
+}
+
+.searchButton {
+  width: 40px;
+  height: 36px;
+  border: 1px solid #174949;
+  background: #174949;
+  text-align: center;
+  color: #fff;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+  font-size: 20px;
+}
+.contenaire{
+  width: 30%;
+}
 
 #header {
   display: flex;
@@ -71,42 +111,33 @@ a {
   padding: 30px;
   align-items:center;
 }
-
-
     .job, .img, .hello {
       width: 33.33%;
       flex-wrap: wrap;
       text-align: center;
       justify-content: center;
     }
-
         .web {
           margin-bottom: -60px;
         }
-
         .name {
           font-family: "SignPainter";
           font-size: 40px;
         }
-
-
         .lieu {
           display: flex;
           align-items: center;
           justify-content: center;
         }
-
-            .location {
-              width: 20px;
-              height: auto;
-              margin-right: 15px;
-              margin-top: -55px;
-            }
-
-            .lemans {
-              margin-top: -55px;
-            }
-
+        .location {
+          width: 20px;
+          height: auto;
+          margin-right: 15px;
+          margin-top: -55px;
+        }
+        .lemans {
+          margin-top: -55px;
+        }
 
     .autoportrait {
       width: 320px;
@@ -114,23 +145,20 @@ a {
       padding: 5px;
     }
 
-
     .hello {
       text-align: justify;
     }
         .bonjour {
           text-align: center;
         }
-
         .book {
-          background-image: url("./forme.svg");
+          background-image: url("img/forme.svg");
           background-repeat: no-repeat;
           height: 100px;
           text-align: center;
           margin-left: 30px;
           padding-top: 25px;
         }
-
         .book a {
           font-family: "piepie", sans-serif;
           font-size: 30px;
@@ -182,7 +210,6 @@ a {
   display: flex;
   justify-content: center;
 }
-
     #gauche {
       width: 45%;
       display: inline-block;
@@ -191,18 +218,15 @@ a {
         .about {
             text-align: justify;
         }
-
             .logo img {
               width: 65%;
             }
-
 
     #droite {
       width: 45%;
       display: inline-block;
       padding: 2%;
     }
-
         .bigger {
           font-weight: bold;
           color: #CE634E;
