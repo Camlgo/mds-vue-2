@@ -5,6 +5,7 @@
     <meta charset="utf-8">
     <title>CV Camille Lego</title>
     <link href="./cv.css" rel="stylesheet" type="text/css">
+    <script src="https://kit.fontawesome.com/7a69607374.js"></script>
   </head>
 
 
@@ -12,18 +13,26 @@
 
     <div id="wrap">
 
+      <!--barre de recherche-->
+      <div class="contenaire">
+         <div class="search">
+            <input v-model="searchString" type="text" class="searchTerm" placeholder="Rechercher...">
+            <button type="submit" class="searchButton">
+              <i class="fa fa-search"></i>
+           </button>
+         </div>
+      </div>
+
       <div id="header">
 
           <div class="job">
-
             <h1 class="web">Web</h1>
             <h2>DESIGNER</h2>
             <p class="name">Camille Lego</p>
 
             <div class="lieu">
-
                 <div class="location">
-                <img src="./location.svg" alt="icône location">
+                <img src="img/location.svg" alt="icône location">
                 </div>
 
                 <div class="lemans">
@@ -35,49 +44,45 @@
           </div>
 
           <div class="img">
-            <img class="autoportrait" src="Autoportrait_1.png" alt="illustration autoportrait">
+            <img class="autoportrait" src="img/Autoportrait_1.png" alt="illustration autoportrait">
           </div>
 
-
           <div class="hello">
-
             <h2 class="bonjour">Bonjour !</h2>
-            <p class="alternance">Je recherche une agence de com' afin d’effectuer mon <b>Master UI/UX Design</b> en alternance.
+            <p class="alternance">Je recherche une agence de com' afin d’effectuer mon <b>Mastère Web Design</b> en alternance.
             </p>
 
             <div class="book">
-              <a href="http://camillelego.willr.fr/" target="_blank">Ici mon book</a>
+              <a href="https://camille-lego.fr/" target="_blank">Ici mon book</a>
             </div>
           </div>
-
         </div>
-
 
 
       <div id="rectangle">
 
           <div class="mail">
             <a href="mailto:camille.lego@outlook.com">
-            <img class="icone" src="./mail.svg" alt="icône mail">
+            <img class="icone" src="img/mail.svg" alt="icône mail">
             <p>camille.lego@outlook.com</p>
             </a>
           </div>
 
           <div class="tel">
             <a href="tel:+33615304386">
-            <img class="icone" src="./tel.svg" alt="icône tel">
+            <img class="icone" src="img/tel.svg" alt="icône tel">
             <p>06 15 30 43 86</p>
             </a>
           </div>
 
           <div class="age">
-            <img class="icone" src="./gâteau.svg" alt="icône age">
-            <p>20 ans</p>
+            <img class="icone" src="img/gâteau.svg" alt="icône age">
+            <p>21 ans</p>
           </div>
 
           <div class="linkedin">
             <a href="https://www.linkedin.com/in/camille-lego-232a01183/" target="_blank">
-            <img class="icone" src="./linkedin.svg" alt="icône linkedin">
+            <img class="icone" src="img/linkedin.svg" alt="icône linkedin">
             <p>Camille Lego</p>
             </a>
           </div>
@@ -99,16 +104,11 @@
             </p>
           </div>
 
+
           <div class="skill">
             <h3>Mes compétences</h3>
             <ul>
-              <li>Stratégie de communication</li>
-              <li>Étude de marché</li>
-              <li>PAO</li>
-              <li>UI design</li>
-              <li>Maquettage</li>
-              <li>Community Management</li>
-              <li>SEO</li>
+              <li v-for="competence in competences">{{ competence.titre }}</li>
             </ul>
           </div>
 
@@ -117,42 +117,38 @@
           </div>
 
           <div class="logo">
-            <img src="./logo_2.png" alt="logo">
+            <img src="img/logo_2.png" alt="logo">
           </div>
 
         </div>
 
-        <div id="droite">
 
+        <div id="droite">
           <div class="school">
             <h3>Formations & diplômes</h3>
+
             <ul>
-              <li><span class="bigger">2020 - 2021 :</span> <b>Bachelor WebDesign</b> <br>
-                École MyDigitalSchool Nantes (44)</li>
-              <li><span class="bigger">2018 - 2020 :</span> <b>DUT Techniques de commercialisation</b> <br>
-                IUT Angers (49)</li>
-              <li><span class="bigger">2015 - 2018 :</span> <b>BAC Scientifique - anglais renforcé</b> <br>
-                Lycée Gabriel Touchard Le Mans (72)</li>
+              <li v-for="formation in formations" :class="​​​​​​​​formation.titre == searchString ? 'active':''​​​​​​">
+                <span class="bigger">{{ formation.periode }} : </span> <b>{{ formation.titre }}</b> <br>
+                {{ formation.lieu }}</li>
             </ul>
           </div>
 
           <div class="experiences">
             <h3>Expériences professionnelles</h3>
-              <p class="bigger">Chargée de communication en alternance</p>
-              <p>FD communication, Le Mans | <b>depuis 2020</b> <br>
-              WebDesign, Community Management, rédaction web, SEO
-            </p>
-            <p class="bigger">Stagiaire assistante marketing</p>
-              <p>FIMOR Electronics, Le Mans | <b>2019</b> <br>
-              Service ADV. Analyse commerciale & portefeuille client
+              <p v-for="experience in experiences">
+                <span class="bigger">{{ experience.titre }}</span>
+                <br>
+              {{ experience.lieu }} | <b>{{ experience.periode }}</b>
+              <br>
+            {{ experience.mission }}
             </p>
         </div>
 
         <div class="langue">
         <h3>Langues parlées</h3>
           <ul>
-            <li><span class="bigger">Anglais :</span> Niveau <strong>B2</strong></li>
-              <li><span class="bigger">Espagnol :</span> Niveau <strong>B1</strong></li>
+            <li v-for="langue in langues"><span class="bigger">{{ langue.titre }} :</span> {{ langue.niveau }}</li>
         </div>
 
       </div>
@@ -160,6 +156,43 @@
     </div>
 
   </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+
+  <script>
+  var cv = new Vue({
+    el: '#wrap',
+      data: {
+        searchString: "",
+        formations: [
+          { titre: 'Bachelor WebDesign', lieu: 'École MyDigitalSchool Nantes (44)', periode: '2020-2021' },
+          { titre: 'DUT Techniques de commercialisation', lieu: 'IUT Angers (49)', periode: '2018-2020' },
+          { titre: 'BAC Scientifique - anglais renforcé', lieu: 'Lycée Gabriel Touchard Le Mans (72)', periode: '2015-2018' }
+        ],
+      competences: [
+        { titre: 'Stratégie de communication' },
+        { titre: 'Étude de marché' },
+        { titre: 'PAO' },
+        { titre: 'UI design' },
+        { titre: 'Maquettage' },
+        { titre: 'Community Management' },
+        { titre: 'SEO' }
+      ],
+      experiences: [
+        { titre: 'Chargée de communication en alternance', lieu: 'FD communication Le Mans', periode: 'depuis septembre 2020', mission: 'WebDesign, Community Management, rédaction web, SEO' },
+        { titre: 'Stagiaire assistante marketing', lieu: 'FIMOR Electronics, Le Mans', periode: 'avril à juin 2019', mission: 'Service ADV. Analyse commerciale & portefeuille client' }
+      ],
+      langues: [
+        { titre: 'Anglais', niveau: 'Niveau B2' },
+        { titre: 'Espagnol', niveau: 'Niveau B1' },
+        { titre: 'HTML & CSS', niveau: 'Niveau avancé' },
+        { titre: 'JavaScript & PHP', niveau: 'Niveau Débutante' },
+      ]
+    }
+
+  })
+
+  </script>
 
   </body>
 
