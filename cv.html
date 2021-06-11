@@ -16,7 +16,7 @@
       <!--barre de recherche-->
       <div class="contenaire">
          <div class="search">
-            <input v-model="searchString" type="text" class="searchTerm" placeholder="Rechercher...">
+            <input v-model="searchString" type="text" class="searchTerm" placeholder="Rechercher une formation...">
             <button type="submit" class="searchButton">
               <i class="fa fa-search"></i>
            </button>
@@ -128,9 +128,10 @@
             <h3>Formations & diplômes</h3>
 
             <ul>
-              <li v-for="formation in formations" :class="​​​​​​​​formation.titre == searchString ? 'active':''​​​​​​">
+              <li v-for="formation in formations" :class="formation.titre == searchString ? 'active' : '' ">
                 <span class="bigger">{{ formation.periode }} : </span> <b>{{ formation.titre }}</b> <br>
-                {{ formation.lieu }}</li>
+                {{ formation.lieu }}
+              </li>
             </ul>
           </div>
 
